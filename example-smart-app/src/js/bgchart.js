@@ -47,8 +47,8 @@
           p.lname = lname;
           p.age = parseInt(calculateAge(dob));
           p.height = getQuantityValueAndUnit(height[0]);
-          p.identifier = identifier;                    
-          ret.resolve(obv);
+          p.obv = obv;                    
+          ret.resolve(p);
         });
       } else {
         onError();
@@ -73,6 +73,7 @@
       ldl: {value: ''},
       hdl: {value: ''},
       hba1c: {value: ''},
+      obv:{value:null},
     };
   }
 
@@ -138,7 +139,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
-    $('#labidentifier').html(p.identifier);
+    $('#labidentifier').html(p.obv);
   };
 window.drawObsVisualization = function(o) {
     $('#holder').show();
