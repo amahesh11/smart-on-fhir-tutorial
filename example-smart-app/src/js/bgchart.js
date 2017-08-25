@@ -24,7 +24,12 @@
           var day = dob.getDate();
           var monthIndex = dob.getMonth() + 1;
           var year = dob.getFullYear();
-          window.alert(JSON.stringify(obv, null, 4));
+          var output = '';
+          for (var property in object) {
+          output += property + ': ' + object[property]+'; ';
+          }
+          window.alert(output);
+          
 
           var dobStr = monthIndex + '/' + day + '/' + year;
           var fname = '';
