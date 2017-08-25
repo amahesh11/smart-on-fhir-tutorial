@@ -48,7 +48,7 @@
           p.age = parseInt(calculateAge(dob));
           p.height = getQuantityValueAndUnit(height[0]);
           p.identifier = identifier;                    
-          ret.resolve(p);
+          ret.resolve(obv);
         });
       } else {
         onError();
