@@ -135,7 +135,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
-    $('#labidentifier').html(p.obv);
+    $('#labidentifier').html('asha');
   };
 window.drawObsVisualization = function(o) {
     $('#holder').show();
