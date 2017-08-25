@@ -25,8 +25,8 @@
           var monthIndex = dob.getMonth() + 1;
           var year = dob.getFullYear();
           var output = '';
-          for (var property in object) {
-          output += property + ': ' + object[property]+'; ';
+          for (var property in obv) {
+          output += property + ': ' + obv[property]+'; ';
           }
           window.alert(output);
           
