@@ -12,12 +12,7 @@
         var patient = smart.patient;
         var pt = patient.read();
         var obv = smart.patient.api.fetchAll({
-                    type: 'Observation',
-                    query: {
-                      category: {
-                        $or: ['vital-signs']
-                      }
-                    }
+                    type: 'Observation'                    
                   });
        
         $.when(pt, obv).fail(onError);
