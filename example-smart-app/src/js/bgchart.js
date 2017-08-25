@@ -24,12 +24,13 @@
           var day = dob.getDate();
           var monthIndex = dob.getMonth() + 1;
           var year = dob.getFullYear();
+          /*
           var output = '';
           for (var property in obv) {
           output += property + ': ' + obv[property]+'; ';
           }
           window.alert(output);
-          
+          */
 
           var dobStr = monthIndex + '/' + day + '/' + year;
           var fname = '';
