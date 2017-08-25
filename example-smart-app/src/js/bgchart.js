@@ -24,6 +24,7 @@
           var day = dob.getDate();
           var monthIndex = dob.getMonth() + 1;
           var year = dob.getFullYear();
+          window.alert(obv);
 
           var dobStr = monthIndex + '/' + day + '/' + year;
           var fname = '';
