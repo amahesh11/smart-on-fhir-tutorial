@@ -11,10 +11,13 @@
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
+        
+        /*
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation'                    
                   });
-       
+       */
+        
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
@@ -24,13 +27,14 @@
           var day = dob.getDate();
           var monthIndex = dob.getMonth() + 1;
           var year = dob.getFullYear();
-          /*
-          var output = '';
-          for (var property in obv) {
-          output += property + ': ' + obv[property]+'; ';
-          }
-          window.alert(output);
-          */
+          $.when(patient.api.search({type: "Observation", query: {code: '8302-2'}, count: 50}))
+                .done(function (obsSearchResults) {
+                    obsSearchResults.data.entry.forEach(function (obs) {
+                        var obsRow = "<tr><td>" + obs.resource.effectiveDateTime + "</td>" + "<td>" +
+                                obs.resource.valueQuantity.value + obs.resource.valueQuantity.unit + "</td></tr>"
+                        $("#obsTable").append(obsRow);
+                    });
+                });
 
           var dobStr = monthIndex + '/' + day + '/' + year;
           var fname = '';
@@ -49,7 +53,7 @@
           p.lname = lname;
           p.age = parseInt(calculateAge(dob));
           p.height = getQuantityValueAndUnit(height[0]);
-          p.obv = obv;                    
+          //p.obv = obv;                    
           ret.resolve(p);
         });
       } else {
