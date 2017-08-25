@@ -137,10 +137,10 @@
     $('#hdl').html(p.hdl);
     $('#labidentifier').html('asha');
   };
-window.drawObsVisualization = function(o) {
+window.drawObsVisualization = function(p) {
     $('#holder').show();
     $('#loading').hide();
-    $('#labidentifier').html(o);
+    $('#labidentifier').html(p);
   };
 
   function getBloodSugar(p)
