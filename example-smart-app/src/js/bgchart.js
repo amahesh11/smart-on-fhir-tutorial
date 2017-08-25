@@ -15,7 +15,7 @@
                     type: 'Observation',
                     query: {
                       category: {
-                        $or: ['laboratory']
+                        $or: ['vital-signs']
                       }
                     }
                   });
