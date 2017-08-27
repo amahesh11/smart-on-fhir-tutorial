@@ -24,10 +24,10 @@
                   });
 
         $.when(pt, obv).fail(onError);
-
-        printObs(obv);
+       
         
         $.when(pt, obv).done(function(patient, obv) {
+          printObs(obv);
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
           var dob = new Date(patient.birthDate);
