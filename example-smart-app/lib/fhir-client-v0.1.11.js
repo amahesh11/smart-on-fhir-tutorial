@@ -137,10 +137,10 @@ return /******/ (function(modules) { // webpackBootstrap
           var DELETE = Defaults.and($$Method('DELETE'));
 
           var http = transport.Http(cfg, adapter);
-
+          window.alert("Base:" + url);
           var Path = url.Path;
           var BaseUrl = Path(cfg.baseUrl);
-          window.alert("Base:" + BaseUrl);
+          
           var resourceTypePath = BaseUrl.slash(":type || :resource.resourceType");
           var searchPath = resourceTypePath;
           var resourceTypeHxPath = resourceTypePath.slash("_history");
@@ -296,7 +296,7 @@ return /******/ (function(modules) { // webpackBootstrap
     };
 
     exports.absoluteUrl = absoluteUrl;
-
+window.alert("absURL:" + absoluteUrl);
     var relativeUrl = function(baseUrl, ref) {
       if (ref.slice(ref, baseUrl.length + 1) === baseUrl + "/") {
         return ref.slice(baseUrl.length + 1);
@@ -309,6 +309,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
     exports.resourceIdToUrl = function(id, baseUrl, type) {
       baseUrl = baseUrl.replace(/\/$/, '');
+      window.alert("baseURL:" + baseUrl);
       id = id.replace(/^\//, '');
       if (id.indexOf('/') < 0) {
         return baseUrl + "/" + type + "/" + id;
