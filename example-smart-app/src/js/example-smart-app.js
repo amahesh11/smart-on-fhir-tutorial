@@ -104,10 +104,9 @@
       var output = '';
       for (var property in observation) {
       output += property + ': ' + observation[property]+'; ';
-        window.alert(output);
+        window.console.log(output);
       }
-      
-      //window.console.log(obsRow);
+            
       });      
   }
 
