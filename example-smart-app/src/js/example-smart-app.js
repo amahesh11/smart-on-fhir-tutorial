@@ -101,7 +101,12 @@
   function printObs(myOservations) {    
     myOservations.forEach(function(observation){      
       //var obsRow = observation.code.coding[0].code + " " + "<td>" + observation.valueQuantity.value;
-      window.alert(observation);
+      var output = '';
+      for (var property in observation) {
+      output += property + ': ' + observation[property]+'; ';
+        window.alert(observation);
+      }
+      
       //window.console.log(obsRow);
       });      
   }
