@@ -99,9 +99,10 @@
   }
 
   function printObs(myOservations) {    
-    myObservations.forEach(function(observation){      
+    myOservations.forEach(function(observation){      
       var obsRow = observation.code.coding[0].code + " " + "<td>" + observation.valueQuantity.value;
-      console.log(obsRow);
+      window.alert(obsRow);
+      window.console.log(obsRow);
       });      
   }
 
