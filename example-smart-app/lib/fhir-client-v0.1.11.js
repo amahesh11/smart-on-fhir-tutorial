@@ -68,7 +68,6 @@ return /******/ (function(modules) { // webpackBootstrap
           defer: defer,
           http: function(args) {
               var ret = jquery.Deferred();
-            window.alert("args url"+args.url);
               var opts = {
                   type: args.method,
                   url: args.url,
@@ -138,10 +137,9 @@ return /******/ (function(modules) { // webpackBootstrap
           var DELETE = Defaults.and($$Method('DELETE'));
 
           var http = transport.Http(cfg, adapter);
-          window.alert("Base:" + url);
+
           var Path = url.Path;
           var BaseUrl = Path(cfg.baseUrl);
-          
           var resourceTypePath = BaseUrl.slash(":type || :resource.resourceType");
           var searchPath = resourceTypePath;
           var resourceTypeHxPath = resourceTypePath.slash("_history");
@@ -297,7 +295,7 @@ return /******/ (function(modules) { // webpackBootstrap
     };
 
     exports.absoluteUrl = absoluteUrl;
-window.alert("absURL:" + absoluteUrl);
+
     var relativeUrl = function(baseUrl, ref) {
       if (ref.slice(ref, baseUrl.length + 1) === baseUrl + "/") {
         return ref.slice(baseUrl.length + 1);
@@ -310,7 +308,6 @@ window.alert("absURL:" + absoluteUrl);
 
     exports.resourceIdToUrl = function(id, baseUrl, type) {
       baseUrl = baseUrl.replace(/\/$/, '');
-      window.alert("baseURL:" + baseUrl);
       id = id.replace(/^\//, '');
       if (id.indexOf('/') < 0) {
         return baseUrl + "/" + type + "/" + id;
@@ -717,7 +714,6 @@ window.alert("absURL:" + absoluteUrl);
 
       exports.$SearchParams = mw.$$Attr('url', function(args){
           var url = args.url;
-        window.alert(url);
           if(args.query){
                var queryStr = buildSearchParams(args.query);
                return url + "?" + queryStr;
@@ -17391,7 +17387,6 @@ BBClient.authorize = function(params, errback){
 
     console.log("sending client reg", params.client);
 
-    window.alert ( params.provider.oauth2.authorize_uri );
     var redirect_to=params.provider.oauth2.authorize_uri + "?" +
       "client_id="+encodeURIComponent(client.client_id)+"&"+
       "response_type="+encodeURIComponent(params.response_type)+"&"+
@@ -17399,8 +17394,6 @@ BBClient.authorize = function(params, errback){
       "redirect_uri="+encodeURIComponent(client.redirect_uri)+"&"+
       "state="+encodeURIComponent(state)+"&"+
       "aud="+encodeURIComponent(params.server);
-
-window.alert ( redirect_to );
 
     if (typeof client.launch !== 'undefined' && client.launch) {
        redirect_to += "&launch="+encodeURIComponent(client.launch);
