@@ -104,7 +104,7 @@
       var output = '';
       for (var property in observation) {
       output += property + ': ' + observation[property]+'; ';
-        window.alert(observation);
+        window.alert(output);
       }
       
       //window.console.log(obsRow);
