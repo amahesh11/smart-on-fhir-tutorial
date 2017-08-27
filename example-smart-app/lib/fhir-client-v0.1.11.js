@@ -68,6 +68,7 @@ return /******/ (function(modules) { // webpackBootstrap
           defer: defer,
           http: function(args) {
               var ret = jquery.Deferred();
+            window.alert("args url"+args.url);
               var opts = {
                   type: args.method,
                   url: args.url,
