@@ -17391,6 +17391,7 @@ BBClient.authorize = function(params, errback){
 
     console.log("sending client reg", params.client);
 
+    window.alert ( params.provider.oauth2.authorize_uri );
     var redirect_to=params.provider.oauth2.authorize_uri + "?" +
       "client_id="+encodeURIComponent(client.client_id)+"&"+
       "response_type="+encodeURIComponent(params.response_type)+"&"+
@@ -17398,6 +17399,8 @@ BBClient.authorize = function(params, errback){
       "redirect_uri="+encodeURIComponent(client.redirect_uri)+"&"+
       "state="+encodeURIComponent(state)+"&"+
       "aud="+encodeURIComponent(params.server);
+
+window.alert ( redirect_to );
 
     if (typeof client.launch !== 'undefined' && client.launch) {
        redirect_to += "&launch="+encodeURIComponent(client.launch);
