@@ -717,6 +717,7 @@ window.alert("absURL:" + absoluteUrl);
 
       exports.$SearchParams = mw.$$Attr('url', function(args){
           var url = args.url;
+        window.alert(url);
           if(args.query){
                var queryStr = buildSearchParams(args.query);
                return url + "?" + queryStr;
