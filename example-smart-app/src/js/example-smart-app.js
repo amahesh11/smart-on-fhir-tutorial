@@ -102,7 +102,7 @@
     myOservations.forEach(function(observation){      
       var obsRow = observation.code.coding[0].code + " " + "<td>" + observation.valueQuantity.value;
       window.alert(obsRow);
-      window.console.log(obsRow);
+      //window.console.log(obsRow);
       });      
   }
 
