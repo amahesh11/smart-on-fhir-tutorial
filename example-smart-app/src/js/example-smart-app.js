@@ -25,8 +25,8 @@
 
         $.when(pt, obv).fail(onError);
 
-        console.log(obv);
-
+        printObs(obv);
+        
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
@@ -96,6 +96,13 @@
       hdl: {value: ''},
       hba1c: {value: ''},
     };
+  }
+
+  function printObs(myOservations) {    
+    myObservations.forEach(function(observation){
+      var obsRow = observation.coding.code + " " + "<td>" + observation.text;
+      console.log(obsRow);
+      });      
   }
 
   function getBloodPressureValue(BPObservations, typeOfPressure) {
