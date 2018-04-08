@@ -1,0 +1,2 @@
+Assisted data visualization with Qlik Sense recommendations
+Qlik Sense recommendations make it easier to create a visualization by allowing you to simply drag and drop fields onto your sheets. Chart suggestions are created using the Cognitive Engine in Qlik, which leverages insights from the data loaded and combines them with best practices for data visualization.
